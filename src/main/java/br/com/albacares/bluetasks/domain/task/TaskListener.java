@@ -20,7 +20,7 @@ public class TaskListener {
 	public void onPrePersistHandler(Task task) {
 		if (task.getAppUser() == null) {
 			String username = SecurityContextHolder.getContext().getAuthentication().getName();
-			AppUser appUser = appUserRepository.findByUserName(username);
+			AppUser appUser = appUserRepository.findByUsername(username);
 			
 			if (appUser == null) {
 				throw new EntityNotFoundException("O usuário " + username + " não foi encontrado");

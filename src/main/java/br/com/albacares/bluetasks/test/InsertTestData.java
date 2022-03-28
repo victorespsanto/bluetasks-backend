@@ -40,13 +40,13 @@ public class InsertTestData {
 		LocalDate baseDate = LocalDate.parse("2025-02-01");
 		
 		for (int i = 1; i <= 5; i++) {			
-			Task task = new Task(String.format("Tarefa #%d de %s", i, appUser1.getUserName()), baseDate.plusDays(i), false);
+			Task task = new Task(String.format("Tarefa #%d de %s", i, appUser1.getUsername()), baseDate.plusDays(i), false);
 			task.setAppUser(appUser1);
 			taskRepository.save(task);
 		}
 		
 		for (int i = 1; i <= 5; i++) {			
-			Task task = new Task(String.format("Tarefa #%d de %s", i, appUser2.getUserName()), baseDate.plusDays(i), false);
+			Task task = new Task(String.format("Tarefa #%d de %s", i, appUser2.getUsername()), baseDate.plusDays(i), false);
 			task.setAppUser(appUser2);
 			taskRepository.save(task);
 		}

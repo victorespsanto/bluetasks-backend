@@ -16,7 +16,7 @@ public class UserDetailsImpl implements UserDetails {
 	private String displayName;
 	
 	public UserDetailsImpl(AppUser appUser) {
-		this.userName = appUser.getUserName();
+		this.userName = appUser.getUsername();
 		this.password = appUser.getPassword();
 		this.displayName = appUser.getDisplayName();
 	}

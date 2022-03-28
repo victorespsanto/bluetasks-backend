@@ -14,10 +14,10 @@ public interface TaskRepository extends PagingAndSortingRepository<Task, Integer
 	Task findByDescription(String description);
 	
 	@Override
-	@Query("SELECT t FROM Task t WHERE t.appUser.userName = ?#{principal}")
+	@Query("SELECT t FROM Task t WHERE t.appUser.username = ?#{principal}")
 	Page<Task> findAll(Pageable pageable);
 	
 	@Override
-	@Query("SELECT t FROM Task t WHERE t.id = ?1 AND t.appUser.userName = ?#{principal}")
+	@Query("SELECT t FROM Task t WHERE t.id = ?1 AND t.appUser.username = ?#{principal}")
 	Optional<Task> findById(Integer id);
 }

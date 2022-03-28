@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @RepositoryRestResource(exported = false) // nao permite que o repositorio seja exportado pelo webservice
 public interface AppUserRepository extends CrudRepository<AppUser, Integer> {
 	
-	AppUser findByUserName(String userName);
+	AppUser findByUsername(String username);
 	
 }
