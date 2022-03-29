@@ -38,9 +38,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/login")
 			.allowedOrigins("*")
-			.allowedMethods("POST")
+			.allowedMethods("POST", "GET")
 			.exposedHeaders(SecurityConstants.AUTHORIZATION_HEADER);
 		
-		logger.info("CORS setup .. OK!");	}
+		registry.addMapping("/api/**")
+		.allowedOrigins("*")
+		.allowedMethods("POST", "GET", "PUT", "DELETE")
+		.exposedHeaders(SecurityConstants.AUTHORIZATION_HEADER);
+	
+		logger.info("CORS setup .. OK!");	
+		
+}
 	
 }
